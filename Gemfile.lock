@@ -87,6 +87,8 @@ GEM
     database_cleaner (1.4.1)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
+    enumerize (0.11.0)
+      activesupport (>= 3.2)
     erb2haml (0.1.5)
       html2haml
     erubis (2.7.0)
@@ -283,6 +285,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   database_cleaner
+  enumerize
   erb2haml
   factory_girl_rails
   faker

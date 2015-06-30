@@ -20,9 +20,9 @@
           = user.name
         %td LV
         %td= user.created_at
-        %td 経過日数
+        %td= ((Time.current - user.created_at) / (60 * 60 * 24)).to_i
         %td PR(合計)
         %td PR(マージ)
         %td フル/パート
         %td 最終面談日
-        %td 最終投稿
+        %td= user.posts.last.presence.created_at
