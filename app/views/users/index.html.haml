@@ -25,4 +25,4 @@
         %td= user.octokit_client.search_issues("is:merged is:pr author:#{user.github_login} user:SonicGarden", {per_page: 1}).total_count
         %td= user.working_form
         %td= user.last_talk
-        %td= user.posts.last.presence.created_at
+        %td= user.posts.last.try(:created_at)
