@@ -1,0 +1,11 @@
+.panel.panel-default
+  .panel-heading
+    = post.created_at
+    - if post.user == current_user
+      .pull-right
+        = link_to '編集', edit_user_post_path(post.user, post)
+        = link_to '削除', user_post_path(post.user, post), :method => :delete, :data => { :confirm => '本当に削除しますか？' }
+  .panel-body
+    = post.body
+  .panel-footer
+    TODO: ここにcommentのフォーム

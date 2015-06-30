@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :posts, dependent: :destroy
+
   validates :room_id, :participation_id, presence: true
 
   def self.create_with_omniauth(auth)
