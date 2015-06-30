@@ -1,0 +1,14 @@
+= simple_form_for(@user) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :level, collection: User.level.options
+
+  .form-inputs
+    = f.input :working_form, collection: User.working_form.options
+
+  .form-inputs
+    = f.input :last_talk, as: :date, html5: true, input_html: { value: Time.current }
+
+  .form-actions
+    = f.button :submit, '編集'

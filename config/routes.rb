@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/auth/failure' => 'sessions#failure'
 
-  resources :users, only: [:index, :update] do
+  resources :users, only: [:index, :edit, :update] do
     resources :posts do
       resources :comments, only: [:create, :edit, :update, :destroy]
     end

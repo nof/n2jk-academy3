@@ -18,11 +18,11 @@
         %td
           = '(未読)' if user.posts.unread_by(current_user).size > 0
           = user.name
-        %td LV
+        %td= user.level
         %td= user.created_at
         %td= ((Time.current - user.created_at) / (60 * 60 * 24)).to_i
         %td PR(合計)
         %td PR(マージ)
-        %td フル/パート
-        %td 最終面談日
+        %td= user.working_form
+        %td= user.last_talk
         %td= user.posts.last.presence.created_at

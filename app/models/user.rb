@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  extend Enumerize
+  enumerize :level, in: [:one, :two]
+  enumerize :working_form, in: [:full, :part]
+
   has_many :posts, dependent: :destroy
   acts_as_reader
 
