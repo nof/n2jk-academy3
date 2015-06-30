@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
+      UserMailer.comment_created(self).deliver_later!
       redirect_to user_posts_url, notice: 'コメントしました'
     else
       render :new

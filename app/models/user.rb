@@ -23,4 +23,8 @@ class User < ActiveRecord::Base
     self.update_column(:token, oauth_data.credentials.token)
   end
 
+  def post_remotty_comment(comment)
+    Remotty::User.me(self.token).participation.post_comment(comment)
+  end
+
 end

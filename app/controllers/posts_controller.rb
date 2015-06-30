@@ -20,6 +20,8 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
 
     if @post.save
+      current_user.post_remotty_comment("週報を投稿しました #{user_post_url(current_user, @post)}")
+      UserMailer.post_created(self).deliver_later!
       redirect_to user_posts_url, notice: 'Post was successfully created.'
     else
       render :new
