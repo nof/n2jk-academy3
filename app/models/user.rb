@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy
+  acts_as_reader
 
   validates :room_id, :participation_id, presence: true
 

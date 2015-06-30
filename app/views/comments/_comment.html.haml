@@ -1,7 +1,10 @@
+- unread = comment.unread?(current_user)
+- comment.mark_as_read! for: current_user
 .panel.panel-default
   .panel-body
     = comment.body
     .pull-right
+      = '未読' if unread
       - if comment.user == current_user
         = link_to '編集', edit_user_post_comment_path(comment.user, comment.post, comment)
         = link_to '削除', user_post_comment_path(comment.user, comment.post, comment), :method => :delete, :data => { :confirm => '本当に削除しますか？' }

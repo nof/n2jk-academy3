@@ -1,8 +1,11 @@
+- unread = post.unread?(current_user)
+- post.mark_as_read! for: current_user
 .panel.panel-default
   .panel-heading
     = post.created_at
-    - if post.user == current_user
-      .pull-right
+    .pull-right
+      = '未読' if unread
+      - if post.user == current_user
         = link_to '編集', edit_user_post_path(post.user, post)
         = link_to '削除', user_post_path(post.user, post), :method => :delete, :data => { :confirm => '本当に削除しますか？' }
   .panel-body
