@@ -1,0 +1,8 @@
+.panel.panel-default
+  .panel-body
+    = comment.body
+    .pull-right
+      - if comment.user == current_user
+        = link_to '編集', edit_user_post_comment_path(comment.user, comment.post, comment)
+        = link_to '削除', user_post_comment_path(comment.user, comment.post, comment), :method => :delete, :data => { :confirm => '本当に削除しますか？' }
+      = comment.created_at

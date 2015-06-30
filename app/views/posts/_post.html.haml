@@ -8,4 +8,5 @@
   .panel-body
     = post.body
   .panel-footer
-    TODO: ここにcommentのフォーム
+    = render 'comments/comments', comments: post.comments
+    = render 'comments/form', post: post

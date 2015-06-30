@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get '/auth/failure' => 'sessions#failure'
 
   resources :users, only: [:index, :update] do
-    resources :posts
+    resources :posts do
+      resources :comments, only: [:create, :edit, :update, :destroy]
+    end
   end
 
   root to: 'home#index'
