@@ -1,0 +1,6 @@
+- unless user_signed_in?
+  .jumbotron
+    .text-center
+      = link_to 'Remottyでログイン', signin_path, class: 'btn btn-primary btn-lg'
+- else
+  = current_user.name
