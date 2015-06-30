@@ -17,6 +17,7 @@ gem 'remotty', git: 'https://github.com/SonicGarden/remotty-ruby-client'
 gem 'unread'
 gem 'enumerize'
 gem 'octokit'
+gem 'redcarpet'
 
 group :development do
   gem 'better_errors'

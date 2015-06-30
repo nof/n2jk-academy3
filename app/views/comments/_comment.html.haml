@@ -2,7 +2,7 @@
 - comment.mark_as_read! for: current_user
 .panel.panel-default
   .panel-body
-    = comment.body
+    = markdown comment.body
     .pull-right
       = '未読' if unread
       - if comment.user == current_user
