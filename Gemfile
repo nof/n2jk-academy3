@@ -24,6 +24,7 @@ group :development do
   gem 'rails_layout'
   gem 'spring-commands-rspec'
   gem 'erb2haml'
+  gem 'letter_opener'
 end
 
 group :development, :test do
