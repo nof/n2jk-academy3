@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150630063649) do
+ActiveRecord::Schema.define(version: 20150630071948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,11 @@ ActiveRecord::Schema.define(version: 20150630063649) do
     t.string   "level"
     t.string   "working_form"
     t.datetime "last_talk"
+    t.string   "github_email"
+    t.integer  "github_id"
+    t.string   "github_token"
+    t.string   "github_login"
+    t.text     "github_auth_hash"
   end
 
   add_foreign_key "comments", "posts"

@@ -23,6 +23,19 @@ class User < ActiveRecord::Base
     end
   end
 
+  def update_github_account_with_auth_hash!(auth_hash)
+    self.github_auth_hash = auth_hash.to_h
+    self.github_email     = auth_hash['info']['email']
+    self.github_id        = auth_hash['uid']
+    self.github_token     = auth_hash['credentials']['token']
+    self.github_login     = auth_hash['extra']['raw_info']['login']
+    self.save!
+  end
+
+  def github_connected?
+    github_id.present?
+  end
+
   def update_credentials(oauth_data)
     self.update_column(:token, oauth_data.credentials.token)
   end
