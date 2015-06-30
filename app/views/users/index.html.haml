@@ -1,0 +1,26 @@
+%table.table.table-hover
+  %thead
+    %tr
+      %th
+      %th 名前
+      %th LV
+      %th 入学日
+      %th 経過日数
+      %th PR(合計)
+      %th PR(マージ)
+      %th フル/パート
+      %th 最終面談日
+      %th 最終投稿
+  %tbody
+    - @users.each do |user|
+      %tr.js-posts-link{ data: { url: user_posts_path(user) } }
+        %td
+        %td= user.name
+        %td LV
+        %td= user.created_at
+        %td 経過日数
+        %td PR(合計)
+        %td PR(マージ)
+        %td フル/パート
+        %td 最終面談日
+        %td 最終投稿
