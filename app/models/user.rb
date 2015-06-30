@@ -36,6 +36,14 @@ class User < ActiveRecord::Base
     github_id.present?
   end
 
+  def octokit_client
+    @octokit_client ||= begin
+      client               = Octokit::Client.new(access_token: github_token)
+      client.auto_paginate = true
+      client
+    end
+  end
+
   def update_credentials(oauth_data)
     self.update_column(:token, oauth_data.credentials.token)
   end

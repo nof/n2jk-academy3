@@ -16,6 +16,7 @@ gem 'omniauth-remotty', git: 'https://github.com/SonicGarden/omniauth-remotty'
 gem 'remotty', git: 'https://github.com/SonicGarden/remotty-ruby-client'
 gem 'unread'
 gem 'enumerize'
+gem 'octokit'
 
 group :development do
   gem 'better_errors'
